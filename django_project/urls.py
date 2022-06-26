@@ -13,9 +13,20 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-]
+    # Django admin
+    path("admin/", admin.site.urls),
+    # User management
+    path("o/", include("oauth2_provider.urls", namespace="oauth2_provider")),
+    path("accounts/", include("allauth.urls")),
+    path("i18n/", include("django.conf.urls.i18n")),
+    # Local apps
+    path("", include("shops.urls")),
+    path("maps/", include("pages.urls")),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

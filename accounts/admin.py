@@ -16,8 +16,8 @@ class CustomUserAdmin(UserAdmin):
     form = CustomUserCreationForm
     model = CustomUser
     list_display = [
-        "username",
         "email",
+        "username",
         "is_superuser",
     ]
 
