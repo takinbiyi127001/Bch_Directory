@@ -15,10 +15,6 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 class Shop(models.Model):
     name = models.CharField(_("name"), max_length=100)
-<<<<<<< HEAD
-=======
-    # location = models.PointField()
->>>>>>> cce111441dcdf6301120f1adb437cf7d03ae846d
     photo = models.ImageField(upload_to="uploads/", blank=True)
     address = map_fields.AddressField(_("address"), max_length=200)
     geolocation = map_fields.GeoLocationField(max_length=100)
@@ -50,10 +46,7 @@ class Category(models.Model):
 
 
 class Tag(models.Model):
-<<<<<<< HEAD
     name = models.CharField(max_length=50)
-=======
->>>>>>> cce111441dcdf6301120f1adb437cf7d03ae846d
     tag = models.ForeignKey(Shop, on_delete=models.CASCADE, related_name="tag")
 
 
