@@ -46,19 +46,23 @@ INSTALLED_APPS = [
     "allauth.socialaccount",
     # "django.contrib.gis",
     "django_google_maps",
+    "django_countries",
     "oauth2_provider",
-    "corsheaders",
     "fontawesomefree",
+    # rest apis
+    "rest_framework",
+    "corsheaders",
     # Local apps
     "accounts.apps.AccountsConfig",
     "shops.apps.ShopsConfig",
     "pages.apps.PagesConfig",
+    "apis.apps.ApisConfig",
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-    "corsheaders.middleware.CorsMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.locale.LocaleMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -209,3 +213,17 @@ LOCALE_PATHS = [
 
 
 GOOGLE_API_KEY = "XXX"
+
+
+REST_FRAMEWORK = {  # new
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.AllowAny",
+    ],
+}
+
+
+CORS_ORIGIN_WHITELIST = (
+    "http://localhost:3000",
+    "http://localhost:8000",
+)
+CSRF_TRUSTED_ORIGINS = ["http://localhost:3000"]
