@@ -32,4 +32,8 @@ urlpatterns = [
     path("maps/", include("pages.urls")),
     # Api apps
     path("api/v1/", include("apis.urls")),
+<<<<<<< HEAD
+=======
+    path("api-auth/", include("rest_framework.urls")),
+>>>>>>> cce111441dcdf6301120f1adb437cf7d03ae846d
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
