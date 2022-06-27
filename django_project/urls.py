@@ -29,4 +29,7 @@ urlpatterns = [
     # Local apps
     path("", include("shops.urls")),
     path("maps/", include("pages.urls")),
+    # Api apps
+    path("api/v1/", include("apis.urls")),
+    path("api-auth/", include("rest_framework.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
