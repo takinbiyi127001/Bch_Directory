@@ -25,11 +25,11 @@ urlpatterns = [
     # User management
     path("o/", include("oauth2_provider.urls", namespace="oauth2_provider")),
     path("accounts/", include("allauth.urls")),
+    path("api-auth/", include("rest_framework.urls")),
     path("i18n/", include("django.conf.urls.i18n")),
     # Local apps
     path("", include("shops.urls")),
     path("maps/", include("pages.urls")),
     # Api apps
     path("api/v1/", include("apis.urls")),
-    path("api-auth/", include("rest_framework.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

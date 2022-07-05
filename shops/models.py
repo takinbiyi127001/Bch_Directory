@@ -16,7 +16,6 @@ from taggit.managers import TaggableManager
 
 class Shop(models.Model):
     name = models.CharField(_("name"), max_length=100)
-    # location = models.PointField()
     photo = models.ImageField(upload_to="uploads/", blank=True)
     address = map_fields.AddressField(_("address"), max_length=200)
     geolocation = map_fields.GeoLocationField(max_length=100)
@@ -49,8 +48,14 @@ class Category(models.Model):
     last_updated = models.DateTimeField(auto_now=True)
 
 
+<<<<<<< HEAD
 # class Tag(models.Model):
 #     tag = models.ForeignKey(Shop, on_delete=models.CASCADE, related_name="tag")
+=======
+class Tag(models.Model):
+    name = models.CharField(max_length=50)
+    tag = models.ForeignKey(Shop, on_delete=models.CASCADE, related_name="tag")
+>>>>>>> f6c7170053a334a856ff9fb78c1ef813dbbe7a5c
 
 
 # For forms
