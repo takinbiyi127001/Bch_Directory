@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # "django.contrib.sites",
     # Third-party
+    "django.contrib.postgres",
     "crispy_forms",
     "crispy_bootstrap5",
     "allauth",
@@ -52,6 +53,7 @@ INSTALLED_APPS = [
     # rest apis
     "rest_framework",
     "corsheaders",
+    "taggit",
     # Local apps
     "accounts.apps.AccountsConfig",
     "shops.apps.ShopsConfig",

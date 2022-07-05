@@ -5,6 +5,7 @@ from django_google_maps import fields as map_fields
 from django.utils.translation import gettext_lazy as _
 from django_countries.fields import CountryField
 from django.core.validators import MaxValueValidator, MinValueValidator
+from taggit.managers import TaggableManager
 
 # from phonenumber_field.formfields import PhoneNumberField
 # from phonenumber_field.widgets import PhoneNumberPrefixWidget
@@ -26,6 +27,8 @@ class Shop(models.Model):
     )
     city = models.CharField(_("city"), max_length=50)
     countries = CountryField(blank=True)
+    tags = TaggableManager()
+
     # phone_number = PhoneNumberField(widget=PhoneNumberPrefixWidget(initial="AUS"))
 
 
@@ -46,8 +49,8 @@ class Category(models.Model):
     last_updated = models.DateTimeField(auto_now=True)
 
 
-class Tag(models.Model):
-    tag = models.ForeignKey(Shop, on_delete=models.CASCADE, related_name="tag")
+# class Tag(models.Model):
+#     tag = models.ForeignKey(Shop, on_delete=models.CASCADE, related_name="tag")
 
 
 # For forms

@@ -35,7 +35,7 @@
                         <li>
                             <a href={% url 'home'%}>Bitcoin Cash Map</a>
                         </li>  
-                        {% if user.is_authenticated %}        
+                        {% comment %} {% if user.is_authenticated %}         {% endcomment %}
                             <li>
                                 <a href="#">Businesses</a>
                             </li>
@@ -48,7 +48,7 @@
                             <li>
                                 <a href="{% url 'account_logout' %}">Log Out</a>
                             </li>
-                        {% else %}
+                        {% comment %} {% else %} {% endcomment %}
                             <li>
                                 <a  href="{% url 'account_login' %}">Log In</a>
                             </li>
@@ -58,7 +58,7 @@
                             <li>
                                 <a  href="{% url 'about' %}">About</a>
                             </li>
-                        {% endif %}
+                        {% comment %} {% endif %} {% endcomment %}
                         <li>
                             <div id="language-switcher" class="navbar-btn collapsed">
                                 <form action="{% url 'set_language' %}" method="post">

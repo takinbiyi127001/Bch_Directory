@@ -1,0 +1,12 @@
+{% extends '_base.html' %}
+
+{% block title %}Search{% endblock title %}
+
+{% block content %}
+    <h1>Search for shops</h1>
+    <form method="get">
+        {{form.as_p}}
+        <input type="submit" value="Search">
+    </form>
+
+{% endblock content %}
